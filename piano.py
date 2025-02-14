@@ -64,9 +64,9 @@ def generar_seno(freq,t,s_rate=s_rate,foDur=0.7):
     global AMPLITUD
     t=np.linspace(0,t,int(s_rate*t),endpoint=False)
     wave=AMPLITUD*np.sin(2*np.pi*freq*t)
-    graphicWave(t,wave,freq)
-    #fade_out = np.linspace(1, 0, int(s_rate * foDur))
-    #wave[-len(fade_out):] *= fade_out  # Aplicar el fade-out al final de la onda
+    #graphicWave(t,wave,freq)
+    fade_out = np.linspace(1, 0, int(s_rate * foDur))
+    wave[-len(fade_out):] *= fade_out  # Aplicar el fade-out al final de la onda
     return wave
 
 def playNote(f,time):
